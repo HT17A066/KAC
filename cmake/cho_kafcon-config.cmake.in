@@ -1,0 +1,54 @@
+# Cho_KAFCon CMake config file
+#
+# This file sets the following variables:
+# Cho_KAFCon_FOUND - Always TRUE.
+# Cho_KAFCon_INCLUDE_DIRS - Directories containing the Cho_KAFCon include files.
+# Cho_KAFCon_IDL_DIRS - Directories containing the Cho_KAFCon IDL files.
+# Cho_KAFCon_LIBRARIES - Libraries needed to use Cho_KAFCon.
+# Cho_KAFCon_DEFINITIONS - Compiler flags for Cho_KAFCon.
+# Cho_KAFCon_VERSION - The version of Cho_KAFCon found.
+# Cho_KAFCon_VERSION_MAJOR - The major version of Cho_KAFCon found.
+# Cho_KAFCon_VERSION_MINOR - The minor version of Cho_KAFCon found.
+# Cho_KAFCon_VERSION_REVISION - The revision version of Cho_KAFCon found.
+# Cho_KAFCon_VERSION_CANDIDATE - The candidate version of Cho_KAFCon found.
+
+message(STATUS "Found Cho_KAFCon-@PROJECT_VERSION@")
+set(Cho_KAFCon_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(Cho_KAFCon_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(Cho_KAFCon_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(Cho_KAFCon_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(Cho_KAFCon_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(Cho_KAFCon_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(Cho_KAFCon_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(Cho_KAFCon_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(Cho_KAFCon_VERSION @PROJECT_VERSION@)
+set(Cho_KAFCon_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(Cho_KAFCon_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(Cho_KAFCon_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(Cho_KAFCon_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

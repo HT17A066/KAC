@@ -1,0 +1,22 @@
+Jan 31 02:41:33.307 INFO: manager: 1.2.1
+Jan 31 02:41:33.308 INFO: manager: Copyright (C) 2003-2017
+Jan 31 02:41:33.308 INFO: manager:   Noriaki Ando
+Jan 31 02:41:33.308 INFO: manager:   Intelligent Systems Research Institute, AIST
+Jan 31 02:41:33.308 INFO: manager: Manager starting.
+Jan 31 02:41:33.308 INFO: manager: Starting local logging.
+Jan 31 02:41:33.404 INFO: NamingOnCorba: Endpoint for the CORBA naming service (localhost) is 127.0.0.1.
+Jan 31 02:41:33.404 INFO: NamingManager: NameServer connection succeeded: corba/localhost
+Jan 31 02:41:33.405 INFO: ManagerServant: Named manager reference (INS) was successfully created.
+Jan 31 02:41:37.421 WARNING: ManagerServant: Master manager not found
+Jan 31 02:41:37.422 INFO: LocalServiceAdmin: All the local services are enabled.
+Jan 31 02:41:37.434 INFO: manager: Component type conf file: Cho_KAFCon.conf loaded.
+Jan 31 02:41:37.434 INFO: ec_base: setRate(1000000.000000) done
+Jan 31 02:41:37.434 INFO: ec_base: setRate(1000.000000) done
+Jan 31 02:41:37.435 INFO: Cho_KAFCon0: 1 execution context was created.
+Jan 31 02:41:37.442 INFO: Cho_KAFCon0: Initial active configuration set is default-set.
+Jan 31 02:41:45.755 WARNING: SdoServiceAdmin: No available SDO service in the factory: 
+Jan 31 02:41:51.475 INFO: ManagerServant: Master manager not found
+Jan 31 02:42:05.693 INFO: ManagerServant: Master manager not found
+Jan 31 02:42:06.211 ERROR: ec_worker: State of the RTC is not ACTIVE_STATE.
+Jan 31 02:42:06.213 WARNING: ec_worker: ExecutionContext is already stopped.
+Jan 31 02:42:06.213 ERROR: ec_base: Invoking on_shutdown() for each RTC failed.
